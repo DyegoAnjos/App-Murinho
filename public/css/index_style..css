@@ -1,0 +1,70 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header{
+    width: 100%;
+    max-height: 20%;
+    background-color: red;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+header a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img{
+    width: 10%;
+    border-radius: 100px;
+}
+
+#logo{
+    width: 5%;
+}
+
+main{
+    background-color: violet;
+    height: 100%;
+}
+
+main img{
+    width: 10%;
+}
+
+footer{
+    width: 100%;
+    max-height: 20%;
+    background-color: green;
+
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+
+}
+
+footer a{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer img{
+    width: 70%;
+    border-radius: 100px;
+}
+
+#menuSelecionado{
+    padding-bottom: 10%;
+}
