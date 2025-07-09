@@ -12,3 +12,34 @@
 body{
     width: 412px;
 }
+
+footer{
+    width: 100%;
+    height: 10%;
+    background-color: green;
+
+    position: fixed;
+
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+
+    top: 50%;
+}
+
+footer a{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer img{
+    width: 70%;
+    border-radius: 100px;
+}
+
+#menuSelecionado{
+    padding-bottom: 10%;
+}
