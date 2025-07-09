@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     text-decoration: none;
 
+    font-family: "Roboto", sans-serif;
+
 }
 
 body{
     width: 412px;
-    height: 917px;
 }
