@@ -6,26 +6,32 @@ body {
 }
 
 main{
-    
     height: 100%;
-    width: 26vw;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: right;
     padding: 1rem 0 1rem 0;
     gap: 0.7rem;
     margin-bottom: 1rem;
-}
-
-#clusterPerfil img{
-    width: 15%;
-    border-radius: 100%;
-}
+    background-color: var(--cor-fundo);
+    font-size: 1.2rem;
+} 
 
 #clusterPerfil {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1%;
+    margin-left: .5rem;
+    
+    img{
+    width: 15%;
+    border-radius: 100%;
+    }
+    
+    a{
+      color: var(--cor-apoio);
+    }
 }
 
 .clusterPerfil {
@@ -33,17 +39,17 @@ main{
 }
 
 .clusterNome {
-    color: var(--cor-apoio);
+    color: var(--cor-principal);
 }
 
 #cluster {
     margin-left: .5rem;
-    color: var(--cor-preto);
-}
-
-#cluster a {
-    gap: 0.5rem;
-    line-height: 2rem;
+    color: var(--cor-preto);    
+    
+    a {
+      gap: 0.5rem;
+      line-height: 2.5rem;
+    }
 }
 
 hr {
