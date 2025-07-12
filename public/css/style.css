@@ -14,6 +14,10 @@
     color: var(--cor-preto);
 }
 
+html{
+    background-color: var(--cor-fundo);
+}
+
 body{
     width: 412px;
 }
@@ -27,8 +31,9 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-
+    justify-content: space-around;
+    gap: 3rem;
+    padding: 1rem;
 }
 
 header a{
@@ -38,12 +43,34 @@ header a{
 }
 
 header img{
-    width: 10%;
-    border-radius: 100px;
+    width: 150%;
 }
 
 #logo{
-    width: 5%;
+    width: 20%;
+    background-color: var(--cor-fundo);
+    border-radius: 1rem;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1.5rem;
+}
+
+nav a{
+    width: 4rem;
+    height: 4rem;
+
+    background-color: var(--cor-fundo);
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+
+nav img{
+    width: 100%;
 }
 
 /* Rodapé */
@@ -60,21 +87,26 @@ footer{
     flex-direction: row;
     align-items: end;
     justify-content: center;
-
+    padding: 1rem;
+    gap: 1rem;
 }
 
 footer a{
-    width: 10%;
+    background-color: var(--cor-fundo);
+    width: 5rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-footer img{
-    width: 70%;
-    border-radius: 100px;
+    border-radius: 10rem;
+    font-size: 2rem;
+    text-align: center;
 }
 
 #menuSelecionado{
-    padding-bottom: 10%;
+    font-size: 2rem;
+    width: 7rem;
+    height: 5.5rem;
+    margin-bottom: 1rem;
+    border: solid .5rem var(--cor-principal);
 }
