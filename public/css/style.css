@@ -86,7 +86,9 @@ nav img{
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 3rem;
+    position: fixed;
+    z-index: 1;
 }
 
 #cabecalhoIntermediario a{
