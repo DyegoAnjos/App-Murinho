@@ -33,7 +33,10 @@ header{
     align-items: center;
     justify-content: space-around;
     gap: 3rem;
-    padding: 1rem;
+    padding: 3rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
 }
 
 header a{
@@ -84,11 +87,14 @@ nav img{
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 3rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
 }
 
 #cabecalhoIntermediario a{
-    width: 4rem;
+    width: 100%;
     font-size: 2rem;
     background-color: var(--cor-fundo);
     border-radius: 5rem;
