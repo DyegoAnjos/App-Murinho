@@ -147,6 +147,14 @@ main img{
     border-top: solid 1px var(--cor-preto);
 }
 
+.nomeProduto{
+    text-align: center;
+    background-color: var(--cor-apoio);
+    padding: .5rem;
+    font-size: 2rem;
+    border-radius: 2rem;
+}
+
 .postRodape{
     width: 100%;
     display: flex;
