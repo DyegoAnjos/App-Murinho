@@ -1,0 +1,66 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+main{
+    background-color: var(--cor-principal);
+    width: 80%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50%;
+    border-radius: 2rem;
+}
+
+#cabecalhoCompartilhar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    border-bottom: solid 3px var(--cor-apoio);
+    padding: 1rem;
+    font-size: 2rem;
+
+    img{
+        width: 30%;
+    }
+}
+
+#cabecalhoCompartilhar img{
+    border-radius: 3rem;
+}
+
+#botaoURL{
+    width: 40%;
+    min-width: 6rem;
+    height: 2rem;
+
+    margin-left: 1rem;
+    background-color: var(--cor-fundo);
+    border: none;
+    border-radius: 5rem;
+    box-shadow: 0px 0px 3px 3px;
+    transition: .1s;
+}
+
+#botaoURL:hover{
+    transition: .1s;
+    background-color: var(--cor-apoio);
+    border: solid 3px var(--cor-fundo);
+}
+
+#apps{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 5em;
+}
