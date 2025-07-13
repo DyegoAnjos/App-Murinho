@@ -11,33 +11,51 @@
     <header id="cabecalhoIntermediario">
         <img src="../../public/img/Logo.png" alt="Logo" id="logo">
         <h1>Denunciar</h1>
-        <a href="../../index.html" target="_self"><i class="fa-solid fa-x botaoVoltar"></i></a>
+        <a href="homePage.html" target="_self"><i class="fa-solid fa-x botaoVoltar"></i></a>
     </header>
-    <form action="denunciar_feedback.html" method="get">
+    <form action="denunciar_feedback.html" method="get" id="formDenuncia">
         <label>
-            <input type="checkbox"> Discurso de Ódio
+            <input type="checkbox" name="motivo" value="discurso_odio"> Discurso de Ódio
         </label>
         <label>
-            <input type="checkbox"> Assédio ou Bullying
+            <input type="checkbox" name="motivo" value="assedio_bullying"> Assédio ou Bullying
         </label>
         <label>
-            <input type="checkbox"> Conteúdo Sexual Explícito
+            <input type="checkbox" name="motivo" value="conteudo_sexual"> Conteúdo Sexual Explícito
         </label>    
         <label>
-            <input type="checkbox"> Atividade Ilegais
+            <input type="checkbox" name="motivo" value="atividades_ilegais"> Atividade Ilegais
         </label>
         <label>
-            <input type="checkbox"> Propaganda Falsa
+            <input type="checkbox" name="motivo" value="propaganda_falsa"> Propaganda Falsa
         </label>
+        <div id="mensagemErro">
+            Por favor, selecione pelo menos um motivo para a denúncia.
+        </div>
         <button type="submit">Denunciar</button>
     </form>
     <footer>
-        <a href="pesquisar.htmlach" target="_self"><i class="fa-solid fa-magnifying-glass botaoPesquisar"></i></a>
-        <a href="http://" target="_self"><i class="fa-solid fa-comment botaoChat"></i></a>
-        <a href="http://" target="_self" id="menuSelecionado"><p class="botaoData">SEG</p></a>
-        <a href="http://" target="_self"><i class="fa-solid fa-heart botaoFavoritos"></i></a>
-        <a href="http://" target="_self"><i class="fa-solid fa-bars botaoMenuBar"></i></a>
+        <a href="pesquisar.html" target="_self"><i class="fa-solid fa-magnifying-glass botaoPesquisar"></i></a>
+        <a href="selecionarChat.html" target="_self"><i class="fa-solid fa-comment botaoChat"></i></a>
+        <a href="calendario.html" target="_self" id="menuSelecionado"><p class="botaoData">SEG</p></a>
+        <a href="favoritos.html" target="_self"><i class="fa-solid fa-heart botaoFavoritos"></i></a>
+        <a href="menu_bar.html" target="_self"><i class="fa-solid fa-bars botaoMenuBar"></i></a>
     </footer>
     <script src="https://kit.fontawesome.com/2d311d7657.js" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('formDenuncia').addEventListener('submit', function(e) {
+            const checkboxes = document.querySelectorAll('input[name="motivo"]:checked');
+            const mensagemErro = document.getElementById('mensagemErro');
+            
+            if (checkboxes.length === 0) {
+                e.preventDefault(); // Impede o envio do formulário
+                mensagemErro.style.display = 'block';
+                return false;
+            } else {
+                mensagemErro.style.display = 'none';
+                return true;
+            }
+        });
+    </script>
 </body>
 </html>

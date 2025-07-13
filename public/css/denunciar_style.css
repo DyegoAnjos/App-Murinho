@@ -67,3 +67,12 @@ form p{
     border-radius: 3rem;
     font-weight: 900;
 }
+
+#mensagemErro{
+    color: red;
+    display: none;
+    margin-top: 10px;
+    background-color: var(--cor-fundo);
+    padding: 1rem;
+    border-radius: 1rem;
+}
