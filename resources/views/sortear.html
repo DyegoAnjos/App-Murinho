@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/sortear_style.css">
+    <title>Roleta de Produtos</title>
+
+</head>
+<body>
+    <header id="cabecalhoIntermediario">
+        <img src="../../public/img/Logo.png" alt="Logo" id="logo">
+        <h1>Sortear</h1>
+        <a href="homePage.html" target="_self"><i class="fa-solid fa-x botaoVoltar"></i></a>
+    </header>
+    <div class="container">
+        <div class="roleta-container">
+            <div class="ponteiro"></div>
+            <div class="roleta" id="roleta">
+                <div class="fatia">
+                    <div class="fatia-emoji">🍫</div>
+                    <div class="fatia-texto">Brigadeiro</div>
+                </div>
+                <div class="fatia">
+                    <div class="fatia-emoji">🐱</div>
+                    <div class="fatia-texto">Touca para Gatos</div>
+                </div>
+                <div class="fatia">
+                    <div class="fatia-emoji">🍪</div>
+                    <div class="fatia-texto">Cookie</div>
+                </div>
+                <div class="fatia">
+                    <div class="fatia-emoji">🧸</div>
+                    <div class="fatia-texto">Boneca de Crochê</div>
+                </div>
+            </div>
+            <div class="centro">🎯</div>
+        </div>
+
+        <button class="btn-girar" id="btnGirar" onclick="girarRoleta()">
+            GIRAR ROLETA
+        </button>
+
+        <div class="resultado" id="resultado">
+            <p>Clique em "GIRAR ROLETA" para descobrir seu produto!</p>
+        </div>
+
+        <div class="historico">
+            <h3>📋 Histórico de Resultados</h3>
+            <div class="historico-lista" id="historico">
+                <p style="text-align: center; opacity: 0.7;">Nenhum resultado ainda...</p>
+            </div>
+        </div>
+    </div>
+    <footer>    
+        <a href="pesquisar.html" target="_self"><i class="fa-solid fa-magnifying-glass botaoPesquisar"></i></a>
+        <a href="selecionarChat.html" target="_self"><i class="fa-solid fa-comment botaoChat"></i></a>
+        <a href="calendario.html" target="_self" id="menuSelecionado"><p class="botaoData">SEG</p></a>
+        <a href="favoritos.html" target="_self"><i class="fa-solid fa-heart botaoFavoritos"></i></a>
+        <a href="menu_bar.html" target="_self"><i class="fa-solid fa-bars botaoMenuBar"></i></a>
+    </footer>
+    <script>
+        const produtos = [
+            { nome: "Brigadeiro", emoji: "🍫", descricao: "Doce tradicional brasileiro irresistível" },
+            { nome: "Touca para Gatos", emoji: "🐱", descricao: "Acessório fofo para seu felino" },
+            { nome: "Cookie", emoji: "🍪", descricao: "Biscoito crocante e delicioso" },
+            { nome: "Boneca de Crochê", emoji: "🧸", descricao: "Artesanato feito com carinho" }
+        ];
+
+        let girando = false;
+        let historico = [];
+
+        function girarRoleta() {
+            if (girando) return;
+
+            girando = true;
+            const btnGirar = document.getElementById('btnGirar');
+            const roleta = document.getElementById('roleta');
+            const resultado = document.getElementById('resultado');
+
+            btnGirar.disabled = true;
+            btnGirar.textContent = 'GIRANDO...';
+
+            // Limpa resultado anterior
+            resultado.innerHTML = '<p>🎲 Girando...</p>';
+
+            // Calcula rotação (múltiplas voltas + posição final)
+            const voltasCompletas = 5 + Math.random() * 5; // 5-10 voltas
+            const anguloFinal = Math.random() * 360;
+            const rotacaoTotal = (voltasCompletas * 360) + anguloFinal;
+
+            // Aplica rotação
+            roleta.style.transform = `rotate(${rotacaoTotal}deg)`;
+
+            // Calcula qual produto foi selecionado
+            // O ponteiro está no topo, então calculamos baseado na posição final
+            const anguloNormalizado = (360 - (anguloFinal % 360)) % 360;
+            const indiceProduto = Math.floor(anguloNormalizado / 90); // 90 graus por fatia (360/4)
+            const produtoSelecionado = produtos[indiceProduto];
+
+            // Mostra resultado após a animação
+            setTimeout(() => {
+                mostrarResultado(produtoSelecionado);
+                adicionarAoHistorico(produtoSelecionado);
+                
+                girando = false;
+                btnGirar.disabled = false;
+                btnGirar.textContent = 'GIRAR NOVAMENTE';
+            }, 3000);
+        }
+
+        function mostrarResultado(produto) {
+            const resultado = document.getElementById('resultado');
+            resultado.innerHTML = `
+                <div>
+                    <h2>🎉 Parabéns!</h2>
+                    <p>${produto.emoji} <strong>${produto.nome}</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">${produto.descricao}</p>
+                </div>
+            `;
+        }
+
+        function adicionarAoHistorico(produto) {
+            const agora = new Date();
+            const horario = agora.toLocaleTimeString('pt-BR', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+
+            historico.unshift({
+                produto: produto,
+                horario: horario
+            });
+
+            // Mantém apenas os últimos 10 resultados
+            if (historico.length > 10) {
+                historico = historico.slice(0, 10);
+            }
+
+            atualizarHistorico();
+        }
+
+        function atualizarHistorico() {
+            const historicoDiv = document.getElementById('historico');
+            
+            if (historico.length === 0) {
+                historicoDiv.innerHTML = '<p style="text-align: center; opacity: 0.7;">Nenhum resultado ainda...</p>';
+                return;
+            }
+
+            const historicoHTML = historico.map(item => `
+                <div class="historico-item">
+                    <strong>${item.horario}</strong> - ${item.produto.emoji} ${item.produto.nome}
+                </div>
+            `).join('');
+
+            historicoDiv.innerHTML = historicoHTML;
+        }
+
+        // Adiciona efeito de hover nas fatias
+        document.addEventListener('DOMContentLoaded', function() {
+            const fatias = document.querySelectorAll('.fatia');
+            fatias.forEach(fatia => {
+                fatia.addEventListener('mouseenter', function() {
+                    if (!girando) {
+                        this.style.transform += ' scale(1.05)';
+                    }
+                });
+                
+                fatia.addEventListener('mouseleave', function() {
+                    if (!girando) {
+                        this.style.transform = this.style.transform.replace(' scale(1.05)', '');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/2d311d7657.js" crossorigin="anonymous"></script>
+</body>
+</html>
