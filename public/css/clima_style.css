@@ -1,0 +1,93 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    margin-top: 7rem;
+    background-color: var(--cor-principal);
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 2rem;
+}
+
+#climaAtual{
+    background-color: var(--cor-fundo);
+    width: 80%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.dia{
+    font-size: 2rem;
+    align-self: flex-start;
+    text-decoration: underline;
+}
+
+.infos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.temperatura{
+    font-size: 2.5rem;
+}
+
+.infos i{
+    font-size: 5rem;
+}
+
+.dados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#outrosDias{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 30%;
+}
+
+.cardDia{
+    background-color: var(--cor-fundo);
+    width: 20%;
+    height: 70%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem;
+    text-align: center;
+
+    .dia{
+        font-size: 1rem;
+        align-self: center;
+    }
+
+    i{
+        font-size: 2rem;
+    }
+
+    .temperatura{
+        font-size: 1rem;
+    }
+
+}
