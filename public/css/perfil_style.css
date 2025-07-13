@@ -56,9 +56,11 @@ main {
     font-size: 2rem;
     font-weight: bold;
     margin: 0;
-    color: #222;
     z-index: 2;
-    color: var(--cor-fundo);
+    color: var(--cor-preto);
+    background-color: var(--cor-fundo);
+    padding: .25rem;
+    border-radius: 3.5rem;
 }
 
 #descricaoUsuario {
@@ -78,7 +80,7 @@ main {
     border-radius: 5rem;
     border: none;
     background-color: var(--cor-fundo);
-    color: var(--cor-preta);
+    color: var(--cor-preto);
     font-size: 1rem;
     text-decoration: none;
     transition: 0.1s;
@@ -93,14 +95,14 @@ main {
 }
 
 .botaoCadastrarProduto {
-    background: var(--cor-apoio);
+    background: var(--cor-fundo);
     margin-left: 1rem;
 }
 .botaoEditar:hover {
-    background: var(--cor-preta);
+    background: var(--cor-preto);
 }
 .botaoCadastrarProduto:hover {
-    background:var(--cor-apoio);
+    background:var(--cor-preto);
 }
 
 #produtosContainer {
