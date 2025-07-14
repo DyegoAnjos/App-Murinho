@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/enquetes_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquetes</title>
+</head>
+<body>
+    <header id="cabecalhoIntermediario">
+        <img src="../../public/img/Logo.png" alt="Logo" id="logo">
+        <h1>Enquetes</h1>
+        <a href="../../index.html" target="_self"><i class="fa-solid fa-x botaoVoltar"></i></a>
+    </header>
+    <main>
+        <section class="enquete">
+            <div class="postCabecalho">
+                    <a href="vendedor.html" target="_self" rel="noopener noreferrer"><img src="https://images.pexels.com/photos/16282655/pexels-photo-16282655.jpeg" alt="Vendedor">CrochêMia</a>
+                    <span class="data-enquete">14/07/2025</span>
+                    <button type="button" class="pontos"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <!-- <div class="popupOpcoes">
+                        <a href="compartilhar.html" class="botaoCompartilhar">Compartilhar</a>
+                        <a href="denunciar.html" class="botaoDenunciar">Denunciar</a>
+                    </div> -->
+                </div>
+            
+        <!-- a ideia seria a classe do forms mudar de "votacao" p/ "votada" dps que o usuario vota
+         e ai mudaria a visualização das opções pra como ta a parcial dos votos e esconde o botão de "votar" -->
+            <h2>Oi gente! Quero voltar a fazer touquinhas, mas também tô pensando em fazer casaquinhos. Quais vocês querem mais?</h2>
+            <form class="votacao">
+                <div class="opcao-voto">
+                    <label><input type="radio" name="musica" value="rock"> Touquinhas</label>
+                </div>
+                <div class="opcao-voto">
+                    <label><input type="radio" name="musica" value="pop"> Casaquinhos</label><br>
+                </div>
+                <div class="opcao-voto">
+                    <label><input type="radio" name="musica" value="mpb"> Vou deixar uma sugestão no mural!</label><br>
+                </div>
+                <button type="submit" class="botaoVotar">Votar</button>
+            </form>
+        </section>
+
+        <section class="enquete">
+            <div class="postCabecalho">
+                    <a href="perfil_user.html" target="_self" rel="noopener noreferrer"><img src="../../public/img/Foto_Perfil.png" alt="Vendedor">Mari Andrade</a>
+                    <span class="data-enquete">11/07/2025</span>
+                    <button type="button" class="pontos"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <!-- <div class="popupOpcoes">
+                        <a href="compartilhar.html" class="botaoCompartilhar">Compartilhar</a>
+                        <a href="denunciar.html" class="botaoDenunciar">Denunciar</a>
+                    </div> -->
+                </div>
+            <h2>Votação dos mais pedidos no mural de sugestões! Qual eu trago semana que vem?</h2>
+            <form class="votada">
+                <div class="opcao-voto">
+                    <span>Brownie de castanha</span>
+                    <div class="barra-resultado" style="width: 60%"></div>
+                    <span class="percentual">60%</span>
+                </div>
+                <div class="opcao-voto">
+                    <span>Brigadeiro de café</span>
+                    <div class="barra-resultado" style="width: 25%"></div>
+                    <span class="percentual">25%</span>
+                </div>
+                <div class="opcao-voto">
+                    <span>Brownie tradicional</span>
+                    <div class="barra-resultado" style="width: 10%"></div>
+                    <span class="percentual">10%</span>
+                </div>
+                <div class="opcao-voto">
+                    <span>Trufa de brigadeiro</span>
+                    <div class="barra-resultado" style="width: 5%"></div>
+                    <span class="percentual">5%</span>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <a href="pesquisar.htmlach" target="_self"><i class="fa-solid fa-magnifying-glass botaoPesquisar"></i></a>
+        <a href="http://" target="_self"><i class="fa-solid fa-comment botaoChat"></i></a>
+        <a href="http://" target="_self" id="menuSelecionado"><p class="botaoData">SEG</p></a>
+        <a href="http://" target="_self"><i class="fa-solid fa-heart botaoFavoritos"></i></a>
+        <a href="http://" target="_self"><i class="fa-solid fa-bars botaoMenuBar"></i></a>
+    </footer>
+    <script src="https://kit.fontawesome.com/2d311d7657.js" crossorigin="anonymous"></script>
+</body>
+</html>
