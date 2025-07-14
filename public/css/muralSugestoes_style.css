@@ -83,7 +83,6 @@ main {
     z-index: 3;
 }
 
-/* Texto da sugestão sobre o post-it */
 .sugestao {
     position: relative;
     z-index: 2;
@@ -106,7 +105,6 @@ main {
     word-break: break-word;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 422px) {
     .clusterSugestao {
         width: 95vw;
