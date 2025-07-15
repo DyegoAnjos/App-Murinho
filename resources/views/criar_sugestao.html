@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/criar_sugestao_style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Sugestão</title>
+</head>
+<body>
+    <header id="cabecalhoIntermediario">
+        <img src="../../public/img/Logo.png" alt="Logo" id="logo">
+        <h1>Enviar Sugestão</h1>
+        <a href="homePage.html" target="_self"><i class="fa-solid fa-x botaoVoltar"></i></a>
+    </header>
+    <main>
+        <form id="enviarSugestao" method="post" action="/enviar_sugestao" enctype="multipart/form-data">
+           <div class="cluster">
+                <div class="form-group" id="descricao">
+                    <label for="sugestao" class="chave">Escreva sua sugestão:</label>
+                    <textarea id="texto" class="descricao" name="descricao" rows="4" maxlength="250" required placeholder="Escreva sua sugestão"></textarea>
+                </div>
+            </div>
+            <button type="submit" id="botaoEditar" class="botaoEditar" onclick="">Enviar</button>
+        </form>
+    </main>
+    <footer>
+        <a href="pesquisar.html" target="_self"><i class="fa-solid fa-magnifying-glass botaoPesquisar"></i></a>
+        <a href="selecionarChat.html" target="_self"><i class="fa-solid fa-comment botaoChat"></i></a>
+        <a href="calendario.html" target="_self" id="menuSelecionado"><p class="botaoData">SEG</p></a>
+        <a href="favoritos.html" target="_self"><i class="fa-solid fa-heart botaoFavoritos"></i></a>
+        <a href="menu_bar.html" target="_self"><i class="fa-solid fa-bars botaoMenuBar"></i></a>
+    </footer>
+    <script src="https://kit.fontawesome.com/2d311d7657.js" crossorigin="anonymous"></script>
+</body>
+</html>
