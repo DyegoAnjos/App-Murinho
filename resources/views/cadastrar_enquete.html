@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/nova_enquete_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Enquete</title>
+</head>
+<body>
+    <header id="cabecalhoIntermediario">
+        <img src="../../public/img/Logo.png" alt="Logo" id="logo">
+        <h1>Criar Enquetes</h1>
+        <a href="../../index.html" target="_self"><i class="fa-solid fa-x botaoVoltar"></i></a>
+    </header>
+    <main>
+        <section class="enquete">
+            <form id="formNovaEnquete" method="post" action="#">
+                <label for="pergunta" class="chave">Descrição:</label>
+                <textarea id="pergunta" name="pergunta" rows="2" maxlength="200" required placeholder="Digite sua pergunta aqui..."></textarea>
+                
+                <div id="opcoes-container">
+                    <label class="chave">Opções de resposta:</label>
+                    <div class="opcao-voto">
+                        <input type="text" id="texto" name="opcao[]" maxlength="50" required placeholder="Opção 1">
+                    </div>
+                    <div class="opcao-voto">
+                        <input type="text" name="opcao[]" maxlength="50" required placeholder="Opção 2">
+                    </div>
+                </div>
+                <button type="button" id="adicionarOpcao" class="botaoVotar">Adicionar opção</button>
+                
+                <div >
+                    <label for="data-publicacao" class="chave">Data de encerramento:</label>
+                    <input type="date" id="data-encerramento" name="data-encerramento" required>
+                </div>
+                
+                <button type="submit" class="botaoVotar">Publicar Enquete</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <a href="pesquisar.htmlach" target="_self"><i class="fa-solid fa-magnifying-glass botaoPesquisar"></i></a>
+        <a href="http://" target="_self"><i class="fa-solid fa-comment botaoChat"></i></a>
+        <a href="http://" target="_self" id="menuSelecionado"><p class="botaoData">SEG</p></a>
+        <a href="http://" target="_self"><i class="fa-solid fa-heart botaoFavoritos"></i></a>
+        <a href="http://" target="_self"><i class="fa-solid fa-bars botaoMenuBar"></i></a>
+    </footer>
+    <script src="https://kit.fontawesome.com/2d311d7657.js" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('adicionarOpcao').onclick = function() {
+            const container = document.getElementById('opcoes-container');
+            const count = container.querySelectorAll('.opcao-voto').length + 1;
+            if(count > 6) return; // Limite de 6 opções
+            const div = document.createElement('div');
+            div.className = 'opcao-voto';
+            div.innerHTML = `<input type="text" name="opcao[]" maxlength="50" required placeholder="Opção ${count}">`;
+            container.appendChild(div);
+        };
+    </script>
+</body>
+</html>

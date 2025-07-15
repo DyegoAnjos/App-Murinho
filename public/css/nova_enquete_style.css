@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--cor-fundo);
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: 15%;
+    margin-bottom: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.enquete {
+    background: var(--cor-fundo);
+    border-radius: 3rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem;
+    margin: 2rem auto;
+    max-width: 420px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--cor-apoio);
+}
+
+.enquete form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.chave {
+    font-weight: 600;
+    color: var(--cor-apoio);
+    padding: .5rem;
+    align-self: flex-start;
+}
+
+#pergunta {
+    border-radius: 2rem;
+    border: 1.5px solid var(--cor-apoio);
+    background: var(--cor-fundo);
+    font-size: 1.1rem;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    resize: vertical;
+    min-height: 48px;
+    max-height: 120px;
+    text-align: center;
+}
+
+#opcoes-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.opcao-voto {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    transition: none;
+}
+
+.opcao-voto input[type="text"] {
+    border-radius: 2rem;
+    border: 1.5px solid var(--cor-apoio);
+    background: var(--cor-fundo);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+#formNovaEnquete #adicionarOpcao {
+    text-align: center;
+    width: 60%;
+    min-width: 8rem;
+    height: 2.5rem;
+    background-color: var(--cor-fundo);
+    border: none;
+    border-radius: 5rem;
+    color: var(--cor-preto);
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0px 0px 3px 3px;
+    transition: 0.1s;
+    margin: 2rem auto 0 auto;
+    display: block;
+}
+
+#formNovaEnquete #adicionarOpcao:hover {
+    background: var(--cor-apoio);
+}
+
+#formNovaEnquete input[type="date"] {
+    border-radius: 2rem;
+    padding: 0.3rem 1rem;
+    border: 1.5px solid var(--cor-apoio);
+    background: var(--cor-fundo);
+    font-size: 1rem;
+    text-align: center;
+}
+
+#formNovaEnquete button[type="submit"] {
+    text-align: center;
+    width: 60%;
+    min-width: 8rem;
+    height: 2.5rem;
+    background-color: var(--cor-fundo);
+    border: none;
+    border-radius: 5rem;
+    color: var(--cor-preto);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 2rem auto 0 auto;
+    display: block;
+    box-shadow: 0px 0px 3px 3px;
+    transition: 0.1s;
+}
+
+#formNovaEnquete button[type="submit"]:hover {
+    background: var(--cor-apoio);
+}
+
+@media (max-width: 500px) {
+    .enquete {
+        padding: 1rem 0.5rem;
+    }
+    #formNovaEnquete button#adicionarOpcao,
+    #formNovaEnquete button[type="submit"] {
+        width: 100%;
+        min-width: 0;
+    }
+}
