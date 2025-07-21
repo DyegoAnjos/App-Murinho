@@ -30,11 +30,12 @@ label{
     justify-content: center;
     gap: 1rem;
     position: relative;
+    text-align: left;
 }
 
 input{
     background-color: var(--cor-fundo);
-    width: 80%;
+    min-width: 200px;
     height: 2rem;
     border-radius: 5rem;
     border: none;

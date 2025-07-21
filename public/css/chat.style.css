@@ -34,6 +34,10 @@ main{
     }
 }
 
+.botaoDenunciar i{
+    color: red;
+}
+
 .infos{
     width: 50%;
     display: flex;

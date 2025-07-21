@@ -17,7 +17,7 @@
         </nav>
     </header>
     <main>
-        <form id="edit-profile-form" method="post" action="/editar_perfil" enctype="multipart/form-data">
+        <form id="edit-profile-form" method="get" action="perfil_user.html" enctype="multipart/form-data">
             <div class="form-group" id="capaPerfil">            
                 <img src="../../public/img/capa-exemplo.jpg" alt="fotoCapa" class="fotoCapa">
                 <input type="file" id="banner" name="banner" accept="image/*">
@@ -53,6 +53,7 @@
                 <input type="senha" id="texto" name="senha" value="" placeholder="Redefinir senha">
             </div>
             <button type="submit" id="botaoEditar" class="botaoEditar" onclick="">Salvar Alterações</button>
+            <button type="submit" id="botaoEditar" class="botaoEditar" onclick="">Cancelar</button>
         </form>
     </main>
     <footer>

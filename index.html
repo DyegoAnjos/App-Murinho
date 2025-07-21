@@ -31,5 +31,26 @@
         </form> 
     </main>
     <script src="https://kit.fontawesome.com/2d311d7657.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const passwordInput = document.querySelector('input[type="password"]');
+    const eyeIcon = document.querySelector('.fa-eye');
+    const eyeSlashIcon = document.querySelector('.fa-eye-slash');
+    
+    // Função para mostrar a senha
+    eyeIcon.addEventListener('click', function() {
+        passwordInput.type = 'text';
+        eyeIcon.classList.add('escondido');
+        eyeSlashIcon.classList.remove('escondido');
+    });
+    
+    // Função para esconder a senha
+    eyeSlashIcon.addEventListener('click', function() {
+        passwordInput.type = 'password';
+        eyeSlashIcon.classList.add('escondido');
+        eyeIcon.classList.remove('escondido');
+    });
+});
+    </script>
 </body>
 </html>

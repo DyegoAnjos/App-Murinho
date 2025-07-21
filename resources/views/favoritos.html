@@ -18,48 +18,14 @@
         <div id="containerPosts">
             <div class="post">
                 <div class="postCabecalho">
-                    <a href="perfil_user.html" target="_self" rel="noopener noreferrer"><img src="https://images.pexels.com/photos/14122742/pexels-photo-14122742.jpeg" alt="Vendedor">Vendedor</a>
-                    <button type="button" class="pontos"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                    <div class="popupOpcoes">
-                        <a href="compartilhar.html" class="botaoCompartilhar">Compartilhar</a>
-                        <a href="denunciar.html" class="botaoDenunciar">Denunciar</a>
-                    </div>
+                    <a href="perfil_user.html" target="_self"><img src="https://images.pexels.com/photos/16282655/pexels-photo-16282655.jpeg" alt="Vendedor">CrochêMia</a>
+                    <a href="compartilhar.html" target="_self"><i class="fa-solid fa-share-nodes"></i></a>
+                    <a href="denunciar.html" target="_self" class="botaoDenunciar"><i class="fa-solid fa-flag"></i></a>
                 </div>
-                <img src="https://images.pexels.com/photos/6441136/pexels-photo-6441136.jpeg" alt="Imagem do Poste">
+                <a href="produtoCrocheMia.html" target="_self" class="FotoProduto"><img src="https://cf.shopee.com.br/file/85ab3ace738b3a8a6cd41e10b352b9a6" alt="Imagem do Poste"></a>
+                <p class="nomeProduto">Toucas para gatinhos</p>
                 <div class="postRodape">
-                    <button type="button" class="botaoFavoritar"><i class="fa-solid fa-heart"></i></button>
-                    <p class="preco">R$ 99,99</p>
-                    <i class="fa-solid fa-money-bill formaPagamento"></i>
-                </div>
-            </div>
-            <div class="post">
-                <div class="postCabecalho">
-                    <a href="perfil_user.html" target="_self" rel="noopener noreferrer"><img src="https://images.pexels.com/photos/14122742/pexels-photo-14122742.jpeg" alt="Vendedor">Vendedor</a>
-                    <button type="button" class="pontos"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                    <div class="popupOpcoes">
-                        <a href="compartilhar.html" class="botaoCompartilhar">Compartilhar</a>
-                        <a href="denunciar.html" class="botaoDenunciar">Denunciar</a>
-                    </div>
-                </div>
-                <img src="https://images.pexels.com/photos/6441136/pexels-photo-6441136.jpeg" alt="Imagem do Poste">
-                <div class="postRodape">
-                    <button type="button" class="botaoFavoritar"><i class="fa-solid fa-heart"></i></button>
-                    <p class="preco">R$ 99,99</p>
-                    <i class="fa-solid fa-money-bill formaPagamento"></i>
-                </div>
-            </div>
-            <div class="post">
-                <div class="postCabecalho">
-                    <a href="perfil_user.html" target="_self" rel="noopener noreferrer"><img src="https://images.pexels.com/photos/14122742/pexels-photo-14122742.jpeg" alt="Vendedor">Vendedor</a>
-                    <button type="button" class="pontos"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                    <div class="popupOpcoes">
-                        <a href="compartilhar.html" class="botaoCompartilhar">Compartilhar</a>
-                        <a href="denunciar.html" class="botaoDenunciar">Denunciar</a>
-                    </div>
-                </div>
-                <img src="https://images.pexels.com/photos/6441136/pexels-photo-6441136.jpeg" alt="Imagem do Poste">
-                <div class="postRodape">
-                    <button type="button" class="botaoFavoritar"><i class="fa-solid fa-heart"></i></button>
+                    <button type="button" class="botaoFavoritar"><i class="fa-regular fa-heart"></i></button>
                     <p class="preco">R$ 99,99</p>
                     <i class="fa-solid fa-money-bill formaPagamento"></i>
                 </div>
@@ -74,5 +40,28 @@
         <a href="menu_bar.html" target="_self"><i class="fa-solid fa-bars botaoMenuBar"></i></a>
     </footer>
     <script src="https://kit.fontawesome.com/2d311d7657.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Seleciona todos os botões de favoritar
+            const botoesFavoritar = document.querySelectorAll('.botaoFavoritar');
+            
+            botoesFavoritar.forEach(function(botao) {
+                botao.addEventListener('click', function() {
+                    const icone = this.querySelector('i');
+                    
+                    // Verifica se o ícone está vazio (fa-regular) ou preenchido (fa-solid)
+                    if (icone.classList.contains('fa-regular')) {
+                        // Muda para coração preenchido
+                        icone.classList.remove('fa-regular');
+                        icone.classList.add('fa-solid');
+                    } else {
+                        // Muda para coração vazio
+                        icone.classList.remove('fa-solid');
+                        icone.classList.add('fa-regular');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

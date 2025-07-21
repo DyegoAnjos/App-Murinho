@@ -17,6 +17,8 @@ body {
 }
 
 .roleta-container {
+    display: none;
+    visibility: hidden;
     position: relative;
     width: 400px;
     height: 400px;
@@ -124,13 +126,14 @@ body {
         .resultado {
             margin-top: 30px;
             padding: 20px;
-            background: rgba(255,255,255,0.1);
+            background-color: var(--cor-apoio);
             border-radius: 15px;
             backdrop-filter: blur(10px);
             min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 1rem;
         }
 
         .resultado h2 {
@@ -170,9 +173,8 @@ body {
             border-bottom: none;
         }
 
-.resultado{
-    visibility: hidden;
-}
+
+
 
 .historico{
     visibility: hidden;
