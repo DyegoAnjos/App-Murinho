@@ -46,7 +46,7 @@ main {
     top: 150px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     background: #fff;
-    z-index: 2;
+    z-index:0;
 }
 
 #nomeUsuario {
@@ -56,7 +56,7 @@ main {
     font-size: 2rem;
     font-weight: bold;
     margin: 0;
-    z-index: 2;
+    z-index: 0;
     color: var(--cor-preto);
     background-color: var(--cor-fundo);
     padding: .25rem;

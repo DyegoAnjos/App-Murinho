@@ -16,7 +16,7 @@
     <main>
         <form id="cadastrarProduto" method="gat" action="editar_perfil.html" enctype="multipart/form-data">
             <div class="form-group" id="fotoProduto">            
-                <img src="" alt="Foto do Produto" class="fotoProduto">
+                <img src="" alt="Foto do Produto" class="fotoProduto" id="imagemPreview">
                 <input type="file" id="foto" name="foto" accept="image/*">
             </div>
             <div class="cluster">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group" id="valorProduto">
                     <label for="valor" class="chave">Valor R$:</label>
-                    <input type="text" id="texto" name="valorProduto" placeholder="R$ 0,00" required>
+                    <input type="number" id="texto" name="valorProduto" placeholder="R$ 0,00" required>
                 </div>
                 <div div class="form-group" id="formas-pagamento">
                     <label for="formaPagamento" class="chave">Forma de Pagamento:</label>
@@ -121,6 +121,36 @@
         <a href="favoritos.html" target="_self"><i class="fa-solid fa-heart botaoFavoritos"></i></a>
         <a href="menu_bar.html" target="_self"><i class="fa-solid fa-bars botaoMenuBar"></i></a>
     </footer>
+    
     <script src="https://kit.fontawesome.com/2d311d7657.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Script para preview da imagem do produto
+        document.getElementById('foto').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const imagemPreview = document.getElementById('imagemPreview');
+            
+            if (file) {
+                // Verifica se o arquivo é uma imagem
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        imagemPreview.src = e.target.result;
+                        imagemPreview.style.display = 'block';
+                    };
+                    
+                    reader.readAsDataURL(file);
+                } else {
+                    alert('Por favor, selecione apenas arquivos de imagem.');
+                    event.target.value = '';
+                }
+            } else {
+                // Remove a imagem se nenhum arquivo for selecionado
+                imagemPreview.src = '';
+                imagemPreview.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

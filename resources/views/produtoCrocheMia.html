@@ -27,7 +27,7 @@
             </nav>
             
             <button type="button" class="botaoFavoritar"><i class="fa-regular fa-heart"></i></button>
-            <p id="pagamento">R$ 24,00<i class="fa-solid fa-money-bill formaPagamento"></i></p>
+            <p id="pagamento">R$ 24,00<i class="fa-brands fa-pix formaPagamento"></i></p>
         </div>
         <p id="descricao">
             Toucas para seu gatinho feitas a mão com todo amor e carinho para o seu lindinho &lt;3
@@ -42,5 +42,51 @@
         <a href="menu_bar.html" target="_self"><i class="fa-solid fa-bars botaoMenuBar"></i></a>
     </footer>
     <script src="https://kit.fontawesome.com/2d311d7657.js" crossorigin="anonymous"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona o botão de favoritar específico desta página
+    const botaoFavoritar = document.querySelector('.botaoFavoritar');
+    
+    if (botaoFavoritar) {
+        // Verifica se há um estado salvo no localStorage
+        const produtoId = 'croche-mia-toucas'; // ID único para este produto
+        const isFavorited = localStorage.getItem(`favorito_${produtoId}`) === 'true';
+        
+        // Define o estado inicial baseado no localStorage
+        const icone = botaoFavoritar.querySelector('i');
+        if (isFavorited) {
+            icone.classList.remove('fa-regular');
+            icone.classList.add('fa-solid');
+        }
+        
+        // Adiciona o event listener
+        botaoFavoritar.addEventListener('click', function() {
+            const icone = this.querySelector('i');
+            
+            // Verifica se o ícone está vazio (fa-regular) ou preenchido (fa-solid)
+            if (icone.classList.contains('fa-regular')) {
+                // Muda para coração preenchido
+                icone.classList.remove('fa-regular');
+                icone.classList.add('fa-solid');
+                // Salva o estado como favorito
+                localStorage.setItem(`favorito_${produtoId}`, 'true');
+                
+                // Feedback visual opcional
+                botaoFavoritar.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    botaoFavoritar.style.transform = 'scale(1)';
+                }, 200);
+                
+            } else {
+                // Muda para coração vazio
+                icone.classList.remove('fa-solid');
+                icone.classList.add('fa-regular');
+                // Remove do localStorage
+                localStorage.setItem(`favorito_${produtoId}`, 'false');
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>
