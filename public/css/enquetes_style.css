@@ -175,6 +175,27 @@ main{
     opacity: 0.85;
 }
 
+.postRodape{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2.5rem;
+}
+
+.botaoEditar{
+    text-align: center;
+    padding-top: .5rem;
+    width: 40%;
+    min-width: 6rem;
+    height: 2rem;
+    background-color: var(--cor-fundo);
+    border: none;
+    border-radius: 5rem;
+    box-shadow: 0px 0px 3px 3px;
+    transition: .1s;
+}
+
 .botaoVotar[type="submit"] {
     text-align: center;
     width: 60%;

@@ -16,6 +16,7 @@ main{
     margin-bottom: 7rem;
     color: var(--cor-preto);
     background-color: var(--cor-fundo);
+    margin-top: 7rem;
 }
 
 #containerNoticias {
