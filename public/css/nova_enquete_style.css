@@ -117,7 +117,7 @@ main {
     text-align: center;
 }
 
-#formNovaEnquete button[type="submit"] {
+#formNovaEnquete a {
     text-align: center;
     width: 60%;
     min-width: 8rem;
@@ -134,7 +134,7 @@ main {
     transition: 0.1s;
 }
 
-#formNovaEnquete button[type="submit"]:hover {
+#formNovaEnquete a:hover {
     background: var(--cor-apoio);
 }
 
@@ -143,7 +143,7 @@ main {
         padding: 1rem 0.5rem;
     }
     #formNovaEnquete button#adicionarOpcao,
-    #formNovaEnquete button[type="submit"] {
+    #formNovaEnquete a {
         width: 100%;
         min-width: 0;
     }
